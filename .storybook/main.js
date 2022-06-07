@@ -6,23 +6,15 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/preset-create-react-app',
-    '@storybook/addon-viewport',
     '@storybook/addon-a11y',
   ],
+  framework: '@storybook/react',
+  core: {
+    builder: 'webpack5',
+  },
   webpackFinal: async config => {
-    config.module.rules.push({
-      test: /\.css$/,
-      use: [
-        {
-          loader: 'postcss-loader',
-          options: {
-            ident: 'postcss',
-            plugins: [require('tailwindcss'), require('autoprefixer')],
-          },
-        },
-      ],
-      include: path.resolve(__dirname, '../'),
-    });
+    config.resolve.alias['@'] = path.resolve(__dirname, '..', 'src');
+
     return config;
   },
 };

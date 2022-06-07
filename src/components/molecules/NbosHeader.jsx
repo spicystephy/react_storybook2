@@ -1,8 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
 
-import { NbosButton } from '../atoms/NbosButton';
-import './header.css';
+import { NbosButton } from '../atoms/NbosButton'
+import './header.css'
 
 export const NbosHeader = ({ user, onLogin, onLogout, onCreateAccount }) => (
   <header>
@@ -48,15 +47,15 @@ export const NbosHeader = ({ user, onLogin, onLogout, onCreateAccount }) => (
       </div>
     </div>
   </header>
-);
+)
 
 NbosHeader.propTypes = {
   user: PropTypes.shape({}),
   onLogin: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,
   onCreateAccount: PropTypes.func.isRequired,
-};
+}
 
 NbosHeader.defaultProps = {
   user: null,
-};
+}

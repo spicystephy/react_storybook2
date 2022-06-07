@@ -1,9 +1,8 @@
-import React from 'react';
-import Highcharts from 'highcharts';
-import HighchartsReact from 'highcharts-react-official';
+import Highcharts from 'highcharts'
+import HighchartsReact from 'highcharts-react-official'
 
 export function NbosHighcharts() {
-  const chartTitle = 'Highcharts Example';
+  const chartTitle = 'Highcharts Example'
   const options = {
     title: {
       text: chartTitle,
@@ -14,7 +13,7 @@ export function NbosHighcharts() {
         name: 'Test Data',
       },
     ],
-  };
+  }
 
-  return <HighchartsReact highcharts={Highcharts} options={options} />;
+  return <HighchartsReact highcharts={Highcharts} options={options} />
 }
