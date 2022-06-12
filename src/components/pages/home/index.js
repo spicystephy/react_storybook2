@@ -58,6 +58,9 @@ export function HomePage() {
           <Link to="/edit" className="App-link">
             Edit Page
           </Link>
+          <Link to="/dashboard" className="App-link tw-ml-4">
+            Dashboard Page
+          </Link>
         </div>
         <NbosHighcharts />
       </section>
