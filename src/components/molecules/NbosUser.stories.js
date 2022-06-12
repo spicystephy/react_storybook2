@@ -12,8 +12,8 @@ export const Default = Template.bind({})
 Default.args = {
   user: {
     id: 1,
-    tl_first_name: 'Ben',
-    tl_last_name: 'Westmoreland',
+    tl_first_name: 'John',
+    tl_last_name: 'Doe',
     first_name: 'Steve',
     last_name: 'Pietrek',
     email: 'steve.pietrek@insight.com',
