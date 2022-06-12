@@ -1,5 +1,4 @@
-import 'antd/dist/antd.css';
-import '../app/styles/index.css';
+import '../app/styles/index.css'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -9,4 +8,4 @@ export const parameters = {
       date: /Date$/,
     },
   },
-};
+}
