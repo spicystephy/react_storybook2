@@ -1,6 +1,6 @@
-import logo from './logo.svg';
-import './style.css';
-import { Link } from 'react-router-dom';
+import logo from './logo.svg'
+import './style.css'
+import { Link } from 'react-router-dom'
 
 export function EditPage() {
   return (
@@ -20,7 +20,7 @@ export function EditPage() {
         </a>
       </header>
 
-      <div className="App-line"></div>
+      <div className="App-line" />
 
       <section className="App-main">
         <Link to="/" className="App-link">
@@ -28,5 +28,5 @@ export function EditPage() {
         </Link>
       </section>
     </div>
-  );
+  )
 }

@@ -1,6 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './button.css';
+import PropTypes from 'prop-types'
+import './button.css'
 
 export const NbosButton = ({
   primary,
@@ -11,7 +10,7 @@ export const NbosButton = ({
 }) => {
   const mode = primary
     ? 'storybook-button--primary'
-    : 'storybook-button--secondary';
+    : 'storybook-button--secondary'
   return (
     <button
       type="button"
@@ -23,8 +22,8 @@ export const NbosButton = ({
     >
       {label}
     </button>
-  );
-};
+  )
+}
 
 NbosButton.propTypes = {
   primary: PropTypes.bool,
@@ -32,11 +31,11 @@ NbosButton.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-};
+}
 
 NbosButton.defaultProps = {
   backgroundColor: null,
   primary: false,
   size: 'medium',
   onClick: undefined,
-};
+}
