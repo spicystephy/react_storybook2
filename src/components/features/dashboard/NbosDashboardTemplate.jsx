@@ -2,7 +2,7 @@
 
 import { NbosDashboard } from '../../organisms/NbosDashboard'
 
-const NbosDashboardTemplate = () => {
+export const NbosDashboardTemplate = () => {
   return (
     <>
       <div>
@@ -16,5 +16,3 @@ const NbosDashboardTemplate = () => {
 NbosDashboardTemplate.propTypes = {}
 
 NbosDashboardTemplate.defaultProps = {}
-
-export default NbosDashboardTemplate
