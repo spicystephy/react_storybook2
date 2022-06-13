@@ -1,5 +1,3 @@
-// import PropTypes from 'prop-types'
-
 import { NbosDashboard } from '../../organisms/NbosDashboard'
 
 export const NbosDashboardTemplate = () => {

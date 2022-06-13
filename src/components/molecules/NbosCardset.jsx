@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types'
 import { NbosCard } from './NbosCard'
 
 export const NbosCardset = () => {

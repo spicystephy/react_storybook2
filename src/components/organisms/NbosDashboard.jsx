@@ -1,5 +1,3 @@
-// import PropTypes from 'prop-types'
-
 import { NbosCardset } from '../molecules/NbosCardset'
 
 export const NbosDashboard = () => {
