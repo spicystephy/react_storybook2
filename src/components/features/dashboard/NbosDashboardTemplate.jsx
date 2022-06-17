@@ -1,16 +1,10 @@
+import { PropTypes } from 'prop-types'
 import { NbosDashboard } from '../../organisms/NbosDashboard'
 
-export const NbosDashboardTemplate = () => {
-  return (
-    <>
-      <div>
-        <span>NbosDashboardTemplate Component</span>
-      </div>
-      <NbosDashboard />
-    </>
-  )
+export const NbosDashboardTemplate = ({ cards }) => {
+  return <NbosDashboard cards={cards} />
 }
 
-NbosDashboardTemplate.propTypes = {}
+NbosDashboardTemplate.propTypes = { cards: PropTypes.array }
 
-NbosDashboardTemplate.defaultProps = {}
+NbosDashboardTemplate.defaultProps = { cards: [] }

@@ -1,18 +1,39 @@
+import PropTypes from 'prop-types'
+import { styled } from '@mui/material/styles'
 import { NbosIcon } from '../atoms/NbosIcon'
 import { NbosText } from '../atoms/NbosText'
 
-export const NbosCard = () => {
+const StyledCard = styled('div')(props => ({
+  backgroundColor: props.bgcolor,
+}))
+export const NbosCard = ({ bgColor, title, count, icon }) => {
   return (
-    <>
-      <div>
-        <span>NbosCard Component</span>
+    <StyledCard bgcolor={bgColor} className="tw-flex tw-w-full tw-h-[120px]">
+      <div className="tw-min-w-[33%] tw-flex tw-justify-center tw-items-center">
+        <NbosIcon icon={icon} color="#fff" />
       </div>
-      <NbosIcon />
-      <NbosText />
-    </>
+      <div className="tw-grow tw-flex tw-flex-col tw-justify-center tw-items-left">
+        <NbosText text={count} size="3xl" color="#fff" bold />
+        <NbosText
+          style={{ marginTop: 20 }}
+          text={title}
+          size="lg"
+          uppercase
+          color="fff"
+        />
+      </div>
+    </StyledCard>
   )
 }
 
-NbosCard.propTypes = {}
+NbosCard.propTypes = {
+  bgColor: PropTypes.string,
+  title: PropTypes.string,
+  value: PropTypes.number,
+}
 
-NbosCard.defaultProps = {}
+NbosCard.defaultProps = {
+  bgColor: '#ff0000',
+  title: 'Not provided',
+  value: 0,
+}

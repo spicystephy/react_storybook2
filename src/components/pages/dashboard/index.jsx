@@ -6,6 +6,7 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import { NbosDashboardTemplate } from '../../features/dashboard/NbosDashboardTemplate'
+import cards from '../../../stories/data/testData-cards'
 
 export function DashboardPage() {
   return (
@@ -35,7 +36,7 @@ export function DashboardPage() {
             <div className="tw-bg-slate-200 tw-h-screen" />
           </aside>
           <section className="tw-grow">
-            <NbosDashboardTemplate />
+            <NbosDashboardTemplate cards={cards} />
           </section>
         </div>
       </main>

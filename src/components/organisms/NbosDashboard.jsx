@@ -1,16 +1,10 @@
+import { PropTypes } from 'prop-types'
 import { NbosCardset } from '../molecules/NbosCardset'
 
-export const NbosDashboard = () => {
-  return (
-    <>
-      <div>
-        <span>NbosDashboard Component</span>
-      </div>
-      <NbosCardset />
-    </>
-  )
+export const NbosDashboard = ({ cards }) => {
+  return <NbosCardset cards={cards} />
 }
 
-NbosDashboard.propTypes = {}
+NbosDashboard.propTypes = { cards: PropTypes.array }
 
-NbosDashboard.defaultProps = {}
+NbosDashboard.defaultProps = { cards: [] }

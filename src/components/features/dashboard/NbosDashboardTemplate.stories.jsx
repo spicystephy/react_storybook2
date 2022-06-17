@@ -1,4 +1,5 @@
 import { NbosDashboardTemplate } from './NbosDashboardTemplate'
+import cards from '../../../stories/data/testData-cards'
 
 export default {
   title: 'Templates/NbosDashboardTemplate',
@@ -8,4 +9,4 @@ export default {
 const Template = args => <NbosDashboardTemplate {...args} />
 
 export const Primary = Template.bind({})
-Primary.args = {}
+Primary.args = { cards }
