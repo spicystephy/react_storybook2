@@ -1,9 +1,11 @@
 import { PropTypes } from 'prop-types'
 import Avatar from '@mui/material/Avatar'
 
-export const NbosAvatar = ({ alt, src, width, height, avatar }) => {
+export const NbosAvatar = ({ avatar, alt, src, width, height }) => {
   return (
-    <Avatar alt={alt} src={src} sx={{ width: { width }, height: { height } }} />
+    <Avatar alt={alt} src={src} sx={{ width: { width }, height: { height } }}>
+      {avatar}
+    </Avatar>
   )
 }
 
