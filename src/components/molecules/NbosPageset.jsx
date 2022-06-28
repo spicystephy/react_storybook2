@@ -1,29 +1,28 @@
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { NbosPage } from './NbosPage'
 import Grid from '@mui/material/Grid'
 
-export const NbosPageset = ({ pages }) => {
+export const NbosPageset = ({ children }) => {
   return (
-    <Grid
-      container
-      spacing={{ xs: 2, md: 3 }}
-      columns={{ xs: 4, md: 8, lg: 16 }}
-    >
-      {pages.map(page => (
-        <Grid key={page.key} item xs={4} sm={4} md={4} lg={4} xl={4}>
-          <NbosPage
-            className="dbPage"
-            data={page.data}
-            bgColor={page.bgColor}
-            elevation={page.elevation}
-            rounded={page.rounded}
-          />
+    <Grid container spacing={2}>
+      <Grid item>
+        <NbosPage elevation={2}>{children}1</NbosPage>
+      </Grid>
+      <Grid container item className=" tw-flex tw-items-center ">
+        <Grid item>
+          <NbosPage elevation={2}>{children}2a</NbosPage>
         </Grid>
-      ))}
+        <Grid item>
+          <NbosPage elevation={2}>{children}2b</NbosPage>
+        </Grid>
+        <Grid item>
+          <NbosPage elevation={2}>{children}2c</NbosPage>
+        </Grid>
+      </Grid>
     </Grid>
   )
 }
 
-NbosPageset.propTypes = { pages: PropTypes.array }
+// NbosPageset.propTypes = {}
 
-NbosPageset.defaultProps = { pages: [] }
+// NbosPageset.defaultProps = {}
