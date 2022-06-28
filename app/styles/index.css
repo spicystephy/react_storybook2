@@ -570,6 +570,22 @@ code {
   --tw-backdrop-sepia:  ;
 }
 
+.tw-m-1 {
+  margin: 0.25rem;
+}
+
+.tw-m-6 {
+  margin: 1.5rem;
+}
+
+.tw-m-4 {
+  margin: 1rem;
+}
+
+.tw-m-8 {
+  margin: 2rem;
+}
+
 .tw-mt-8 {
   margin-top: 2rem;
 }
@@ -582,48 +598,145 @@ code {
   margin-left: 1rem;
 }
 
+.tw-mt-6 {
+  margin-top: 1.5rem;
+}
+
 .tw-flex {
   display: flex;
+}
+
+.tw-grid {
+  display: grid;
 }
 
 .tw-hidden {
   display: none;
 }
 
-.tw-h-screen {
-  height: 100vh;
-}
-
 .tw-h-\[120px\] {
   height: 120px;
+}
+
+.tw-h-full {
+  height: 100%;
+}
+
+.tw-h-screen {
+  height: 100vh;
 }
 
 .tw-w-full {
   width: 100%;
 }
 
-.tw-min-w-\[20\%\] {
-  min-width: 20%;
-}
-
 .tw-min-w-\[33\%\] {
   min-width: 33%;
+}
+
+.tw-min-w-\[20\%\] {
+  min-width: 20%;
 }
 
 .tw-grow {
   flex-grow: 1;
 }
 
+.tw-grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.tw-grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.tw-grid-cols-12 {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.tw-grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tw-grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.tw-grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.tw-grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.tw-flex-row {
+  flex-direction: row;
+}
+
 .tw-flex-col {
   flex-direction: column;
+}
+
+.tw-content-center {
+  align-content: center;
+}
+
+.tw-content-around {
+  align-content: space-around;
 }
 
 .tw-items-center {
   align-items: center;
 }
 
+.tw-justify-start {
+  justify-content: flex-start;
+}
+
 .tw-justify-center {
   justify-content: center;
+}
+
+.tw-justify-items-start {
+  justify-items: start;
+}
+
+.tw-justify-items-center {
+  justify-items: center;
+}
+
+.tw-gap-2 {
+  gap: 0.5rem;
+}
+
+.tw-gap-4 {
+  gap: 1rem;
+}
+
+.tw-gap-8 {
+  gap: 2rem;
+}
+
+.tw-gap-6 {
+  gap: 1.5rem;
+}
+
+.tw-gap-x-2 {
+  -webkit-column-gap: 0.5rem;
+          column-gap: 0.5rem;
+}
+
+.tw-gap-y-4 {
+  row-gap: 1rem;
+}
+
+.tw-border-r-4 {
+  border-right-width: 4px;
+}
+
+.tw-border-r-2 {
+  border-right-width: 2px;
 }
 
 .tw-bg-slate-200 {
@@ -631,9 +744,53 @@ code {
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
+.tw-p-4 {
+  padding: 1rem;
+}
+
+.tw-p-2 {
+  padding: 0.5rem;
+}
+
+.tw-p-8 {
+  padding: 2rem;
+}
+
 .tw-px-\[50px\] {
   padding-left: 50px;
   padding-right: 50px;
+}
+
+.tw-py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.tw-py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.tw-py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.tw-px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.tw-pt-2 {
+  padding-top: 0.5rem;
+}
+
+.tw-pr-4 {
+  padding-right: 1rem;
+}
+
+.tw-align-middle {
+  vertical-align: middle;
 }
 
 .tw-text-xs {
