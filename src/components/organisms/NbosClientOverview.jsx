@@ -1,12 +1,19 @@
-// import PropTypes from 'prop-types'
 import { NbosPage } from '../molecules/NbosPage'
 import Grid from '@mui/material/Grid'
 import { NbosText } from '../atoms/NbosText'
 
 export const NbosClientOverview = ({ client }) => {
   return (
-    <NbosPage>
-      <Grid container direction="row">
+    <NbosPage bgColor="#FAF9F6">
+      <Grid
+        container
+        xs={12}
+        direction="row"
+        spacing={6}
+        justifyContent="start"
+        alignItems="center"
+        className="tw-p-4"
+      >
         <Grid item>
           <NbosText text={client.total_relationships} size="2xl" />
           <NbosText text="Total Relationships" size="xs" color="#808080" />
@@ -35,7 +42,3 @@ export const NbosClientOverview = ({ client }) => {
     </NbosPage>
   )
 }
-
-// NbosPageset.propTypes = {}
-
-// NbosPageset.defaultProps = {}
