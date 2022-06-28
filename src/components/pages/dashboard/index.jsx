@@ -6,12 +6,13 @@ import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import { NbosDashboardTemplate } from '../../features/dashboard/NbosDashboardTemplate'
-import cards from '../../../stories/data/testData-cards'
-
+import { user } from '../../../stories/data/testData-user'
+import { client } from '../../../stories/data/testData-client'
+import { summary1, summary2 } from '../../../stories/data/testData-summary'
 export function DashboardPage() {
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1, user }}>
         <AppBar position="static">
           <Toolbar>
             <IconButton
@@ -36,7 +37,12 @@ export function DashboardPage() {
             <div className="tw-bg-slate-200 tw-h-screen" />
           </aside>
           <section className="tw-grow">
-            <NbosDashboardTemplate cards={cards} />
+            <NbosDashboardTemplate
+              user={user}
+              client={client}
+              summary1={summary1}
+              summary2={summary2}
+            />
           </section>
         </div>
       </main>
