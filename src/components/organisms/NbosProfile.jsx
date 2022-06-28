@@ -6,21 +6,31 @@ import Grid from '@mui/material/Grid'
 
 export const NbosProfile = ({ user, avatar }) => {
   return (
-    <NbosPage elevation={2}>
-      <Grid container direction="column" alignItems="center">
-        <Grid className="tw-pt-2">
+    <NbosPage bgColor="#FAF9F6" elevation={2}>
+      <Grid
+        container
+        xs={12}
+        direction="column"
+        justifyContent="center"
+        alignItems="center"
+        className="tw-p-4"
+      >
+        <Grid item className="tw-pt-2">
           <NbosAvatar avatar={avatar} />
         </Grid>
-        <Grid item className="tw-py-2">
+        <Grid item className="tw-py-2 tw-justify-items-center">
           <NbosText text="Name" size="xs" color="#808080" />
           <NbosText size="xl" text={`${user.first_name} ${user.last_name}`} />
-
+        </Grid>
+        <Grid item className="tw-py-2">
           <NbosText text="Hire Date" size="xs" color="#808080" />
-          <NbosText text={`${user.hire_date}`} />
-
+          <NbosText text={user.hire_date} />
+        </Grid>
+        <Grid item className="tw-py-2">
           <NbosText text="Role" size="xs" color="#808080" />
-          <NbosText size="lg" text={`${user.role}`} />
-
+          <NbosText size="lg" text={user.role} />
+        </Grid>
+        <Grid item className="tw-py-2">
           <NbosText text="Team Lead" size="xs" color="#808080" />
           <NbosText text={`${user.tl_first_name} ${user.tl_last_name}`} />
         </Grid>
