@@ -2,17 +2,17 @@ import * as React from 'react'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
-export default function NbosMetricToggleSwitch() {
-  const [alignment, setAlignment] = React.useState('outcome')
+export default function NbosMetricToggleSwitch({ changeHandler }) {
+  const [metric, setMetric] = React.useState('outcome')
 
-  const handleChange = (event, newAlignment) => {
-    setAlignment(newAlignment)
+  const handleChange = (event, newMetric) => {
+    setMetric(newMetric)
   }
 
   return (
     <ToggleButtonGroup
       color="primary"
-      value={alignment}
+      value={metric}
       exclusive
       onChange={handleChange}
       size="small"
