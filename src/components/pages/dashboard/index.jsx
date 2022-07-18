@@ -9,6 +9,7 @@ import { NbosDashboardTemplate } from '../../features/dashboard/NbosDashboardTem
 import { user } from '../../../stories/data/testData-user'
 import { client } from '../../../stories/data/testData-client'
 import { summary1, summary2 } from '../../../stories/data/testData-summary'
+
 export function DashboardPage() {
   return (
     <>

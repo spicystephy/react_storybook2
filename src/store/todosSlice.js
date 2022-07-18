@@ -1,5 +1,14 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import TodosDataService from 'services/todos.service'
+
+const selectTodos = state => state.todos.todos
+export const completedTodosSelector = createSelector([selectTodos], todos =>
+  todos.filter(todo => todo.completed),
+)
+export const completedTodosCountSelector = createSelector(
+  [selectTodos],
+  todos => todos.filter(todo => todo.completed).length,
+)
 
 export const retrieveTodos = createAsyncThunk('todos/retrieve', async () => {
   const res = await TodosDataService.getAll()
