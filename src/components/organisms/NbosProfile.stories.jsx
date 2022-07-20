@@ -10,5 +10,3 @@ const Template = args => <NbosProfile {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = { user }
-
-// toggle btn should get functionality right FIRST

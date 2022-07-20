@@ -1,4 +1,4 @@
-import { summary1 } from '../../stories/data/testData-summary'
+import { summary1 } from '../../stories/data/testData-summary1'
 import { NbosSummary1 } from './NbosSummary1'
 
 export default {

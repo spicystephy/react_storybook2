@@ -1,8 +1,8 @@
 import { NbosMetrics } from './NbosMetrics'
 
 export default {
-  title: 'organisms/NbosMetrics',
-  component: 'NbosMetrics',
+  title: 'Organisms/NbosMetrics',
+  component: NbosMetrics,
 }
 
 const Template = args => <NbosMetrics {...args} />
