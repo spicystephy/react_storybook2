@@ -8,7 +8,8 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { NbosDashboardTemplate } from '../../features/dashboard/NbosDashboardTemplate'
 import { user } from '../../../stories/data/testData-user'
 import { client } from '../../../stories/data/testData-client'
-import { summary1, summary2 } from '../../../stories/data/testData-summary'
+import { summary1 } from '../../../stories/data/testData-summary1'
+import { summary2 } from '../../../stories/data/testData-summary2'
 
 export function DashboardPage() {
   return (
