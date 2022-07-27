@@ -1,9 +1,9 @@
 export const summary2 = [
   {
     user_id: 1,
-    ttm_revenue: 518000.89,
+    ttm_rev: 518000.89,
     ttm_avg_raroc: 0.0441,
-    fee_equivalent_card_percent_load_commit: 0.94,
+    fee_equiv_card_load_comm: 0.0094,
   },
   {
     user_id: 2,

@@ -3,7 +3,7 @@ export const summary1 = [
     user_id: 1,
     ttm_avg_loan_bal: 519000.09,
     ttm_avg_credit_comm: 549000.13,
-    ttm_depo_bal: 0.0,
+    ttm_dep_bal: 0.0,
   },
   {
     user_id: 2,

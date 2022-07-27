@@ -3,7 +3,7 @@ export const client = [
     user_id: 1,
     relationships: 56,
     credit_only: 4,
-    highg_relationships: 6,
+    high_relationships: 6,
     top_prospects: 14,
     suspects: 0,
   },
