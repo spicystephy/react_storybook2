@@ -8,4 +8,8 @@ export default {
 const Template = args => <NbosMetrics {...args} />
 
 export const Primary = Template.bind({})
-Primary.args = {}
+Primary.args = {
+  onChange: chartType => {
+    console.log(chartType)
+  },
+}
