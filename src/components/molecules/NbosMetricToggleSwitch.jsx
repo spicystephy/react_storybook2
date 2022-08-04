@@ -5,8 +5,11 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 export default function NbosMetricToggleSwitch({ changeHandler }) {
   const [toggle, setToggle] = React.useState('outcome')
 
-  const handleChange = (event, newEvent) => {
-    setToggle(newEvent)
+  const handleChange = (event, newValue) => {
+    // changes the toggle btn
+    setToggle(newValue)
+    // displays selected chart data
+    changeHandler(newValue)
   }
 
   return (
