@@ -25,28 +25,28 @@ export const NbosHighchartsColumn = () => {
       gridLineWidth: 0,
     },
     yAxis: {
+      title: {
+        text: 'Revenue',
+      },
+      tickAmount: 4,
       gridLineWidth: 1,
       lineWidth: 0,
     },
-    tooltip: {
-      valueSuffix: ' millions',
-    },
+    // tooltip: {
+    //   valueSuffix: ' millions',
+    // },
     plotOptions: {
-      bar: {
-        dataLabels: {
-          enabled: true,
-        },
-      },
+      column: { pointPadding: 0, borderWidth: 0 },
     },
     series: [
       {
         name: '2021',
-        data: [8.5, 2.5, 2.5, 6],
+        data: [1350, 1300, 600, 1350, 1350],
         color: '#0066ff',
       },
       {
         name: '2020',
-        data: [5, 1, 1, 4],
+        data: [1550, 1200, 1650, 1550, 1300],
         color: '#a2c4f7',
       },
     ],
