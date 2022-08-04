@@ -33,7 +33,12 @@ export const NbosText = ({ text, size, uppercase, bold, color }) => {
 }
 
 NbosText.propTypes = {
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  text: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.object,
+    PropTypes.array,
+  ]),
   size: PropTypes.oneOf([
     'xs',
     'sm',
