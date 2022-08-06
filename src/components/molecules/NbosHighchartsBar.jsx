@@ -1,10 +1,14 @@
-/* eslint-disable no-self-compare */
-/* eslint-disable no-constant-condition */
+// import React, { useEffect, useState } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 // import { dataFormatter } from 'utilities'
 
-export const NbosHighchartsBar = ({ chartName }) => {
+export const NbosHighchartsBar = ({
+  chartName,
+  outcomeMetrics,
+  behaviorMetrics,
+  users,
+}) => {
   const options = {
     chart: {
       type: 'bar',
@@ -19,14 +23,22 @@ export const NbosHighchartsBar = ({ chartName }) => {
     },
     legend: {
       align: 'left',
-      x: 15,
+      // x: 15,
     },
     title: {
-      text: 'Bone Maides vs. This Time Last Year',
+      text: `${users.userName} vs. This Time Last Year`,
+      // text: 'Bone Maides vs. This Time Last Year',
       align: 'left',
-      x: 15,
+      // x: 15,
     },
     xAxis: {
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            enabled: true,
+          },
+        },
+      },
       categories:
         chartName === 'outcome'
           ? ['Loan Production', 'Deposit Growth', 'TM Growth', 'New Clients']
@@ -43,72 +55,86 @@ export const NbosHighchartsBar = ({ chartName }) => {
       gridLineWidth: 0,
       lineWidth: 0,
       title: {
-        text: 'Revenue',
+        text: null,
       },
       labels: {
         enabled: false,
       },
-    },
-    // tooltip: {
-    //   valueSuffix: ' millions',
-    // },
-    plotOptions: {
-      // bar: {
-      //   dataLabels: {
-      //     enabled: true,
-      //   },
-      // },
-      series: {
-        minPointLength: 3,
-        dataLabels: {
-          enabled: true,
-          formatter: function () {
-            if (chartName === 'outcome') {
-              if (this.y > 1000 && this.y < 1000000) {
-                const value = this.y / 1000
-                return `$${value}K`
-              } else if (this.y < 1000) {
-                return this.y
-              } else if (this.y >= 1000000) {
-                const value = this.y / 1000000
-                return `$${value}M`
-              }
-            }
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            enabled: true,
           },
         },
       },
     },
-    series:
-      chartName === 'outcome'
-        ? [
-            {
-              name: 'RM',
-              color: '#0066ff',
-              data: [
-                3180000,
-                850000,
-                850000,
-                { y: 0, color: 0 < 2 ? 'red' : '#0066ff' },
+
+    plotOptions: {
+      bar: {
+        dataLabels: {
+          enabled: true,
+          formatter: function () {
+            // if (chartName === 'outcome') {
+            if (this.y >= 1000000) {
+              const value = this.y / 1000000
+              return `$${value}M`
+            } else if (this.y > 1000 && this.y < 1000000) {
+              const value = this.y / 1000
+              return `$${value}K`
+            } else return this.y
+          },
+        },
+      },
+      // },
+    },
+    series: [
+      {
+        name: 'RM',
+        color: '#0066ff',
+        data:
+          chartName === 'outcome'
+            ? [
+                outcomeMetrics.loanProdY1,
+                outcomeMetrics.depGrowthY1,
+                outcomeMetrics.tmGrowthY1,
+                {
+                  y: outcomeMetrics.newClientsY1,
+                  color: `${
+                    outcomeMetrics.newClientsY1 > 2 ? '#0066ff' : 'red'
+                  }`,
+                },
+              ]
+            : [
+                behaviorMetrics.satisfactionY1,
+                behaviorMetrics.clientCallsY1,
+                {
+                  y: behaviorMetrics.prospectCallsY1,
+                  color: `${
+                    behaviorMetrics.prospectCallsY1 > 5 ? '#0066ff' : '#red'
+                  }`,
+                },
+                behaviorMetrics.strategiesY1,
               ],
-            },
-            {
-              name: 'This Time Last Year',
-              data: [5000000, 1000000, 1000000, 4],
-              color: '#bfbfbf',
-            },
-          ]
-        : [
-            {
-              name: 'RM',
-              data: [4.2, 54, { y: 2, color: 2 <= 2 ? 'red' : '#0066ff' }, 6],
-              color: '#0066ff',
-            },
-            {
-              name: 'This Time Last Year',
-              data: [5, 84, 11, 4],
-              color: '#bfbfbf',
-            },
-          ],
+      },
+      {
+        name: 'This Time Last Year',
+        color: '#bfbfbf',
+        data:
+          chartName === 'outcome'
+            ? [
+                outcomeMetrics.loanProdY2,
+                outcomeMetrics.DepGrowthY2,
+                outcomeMetrics.TmGrowthY2,
+                outcomeMetrics.newClientsY2,
+              ]
+            : [
+                behaviorMetrics.satisfactionY2,
+                behaviorMetrics.clientCallsY2,
+                behaviorMetrics.prospectCallsY2,
+                behaviorMetrics.strategiesY2,
+              ],
+      },
+    ],
   }
 
   return <HighchartsReact highcharts={Highcharts} options={options} />
