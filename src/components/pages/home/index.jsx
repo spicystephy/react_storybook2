@@ -1,6 +1,6 @@
 import logo from './logo.svg'
 import { Counter } from '../../features/counter/Counter'
-import { NbosHighcharts } from '../../molecules/NbosHighcharts'
+// import { NbosHighcharts } from '../../molecules/NbosHighcharts'
 import './style.css'
 import { Link } from 'react-router-dom'
 
@@ -62,7 +62,7 @@ export function HomePage() {
             Dashboard Page
           </Link>
         </div>
-        <NbosHighcharts />
+        {/* <NbosHighcharts /> */}
       </section>
     </div>
   )

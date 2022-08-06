@@ -1,8 +1,8 @@
-import ProfileService from 'services/profile.service'
+import UsersService from 'services/users.service'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-export const getProfile = createAsyncThunk('profile/get', async () => {
-  const res = await ProfileService.get()
+export const getUsers = createAsyncThunk('users/get', async () => {
+  const res = await UsersService.get()
   return res.data
 })
 
@@ -13,15 +13,15 @@ const initialState = {
   teamLead: '',
 }
 
-export const profileSlice = createSlice({
-  name: 'profileSlice',
+export const usersSlice = createSlice({
+  name: 'usersSlice',
 
   initialState,
 
   reducers: {},
 
   extraReducers: {
-    [getProfile.fulfilled]: (state, action) => {
+    [getUsers.fulfilled]: (state, action) => {
       state.userName = `${action.payload.first_name} ${action.payload.last_name}`
       state.hireDate = action.payload.hire_date
       state.role = action.payload.role
@@ -30,6 +30,6 @@ export const profileSlice = createSlice({
   },
 })
 
-export const { get } = profileSlice.actions
-const { reducer } = profileSlice
+export const { get } = usersSlice.actions
+const { reducer } = usersSlice
 export default reducer

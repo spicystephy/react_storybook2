@@ -23,13 +23,13 @@ export const NbosHighchartsBar = ({
     },
     legend: {
       align: 'left',
-      // x: 15,
+      x: 15,
     },
     title: {
       text: `${users.userName} vs. This Time Last Year`,
       // text: 'Bone Maides vs. This Time Last Year',
       align: 'left',
-      // x: 15,
+      x: 15,
     },
     xAxis: {
       plotOptions: {

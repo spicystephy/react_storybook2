@@ -29,17 +29,6 @@ Outcome.args = {
     newClientsY1: outcomeMetrics[1].new_clients_y1,
     newClientsY2: outcomeMetrics[1].new_clients_y2,
   },
-}
-
-export const Behavior = Template.bind({})
-Behavior.args = {
-  chartName: 'behavior',
-  users: {
-    userName: `${users[1].first_name} ${users[1].last_name}`,
-    hireDate: users[1].hire_date,
-    role: users[1].role,
-    teamLead: `${users[1].tl_first_name} ${users[1].tl_last_name}`,
-  },
   behaviorMetrics: {
     satisfactionY1: behaviorMetrics[1].avg_overall_rm_sat_y1,
     satisfactionY2: behaviorMetrics[1].avg_overall_rm_sat_y2,
@@ -50,4 +39,24 @@ Behavior.args = {
     strategiesY1: behaviorMetrics[1].strat_uploaded_y1,
     strategiesY2: behaviorMetrics[1].strat_uploaded_y2,
   },
+
+  // export const Behavior = Template.bind({})
+  // Behavior.args = {
+  //   chartName: 'behavior',
+  //   users: {
+  //     userName: `${users[1].first_name} ${users[1].last_name}`,
+  //     hireDate: users[1].hire_date,
+  //     role: users[1].role,
+  //     teamLead: `${users[1].tl_first_name} ${users[1].tl_last_name}`,
+  //   },
+  //   behaviorMetrics: {
+  //     satisfactionY1: behaviorMetrics[1].avg_overall_rm_sat_y1,
+  //     satisfactionY2: behaviorMetrics[1].avg_overall_rm_sat_y2,
+  //     clientCallsY1: behaviorMetrics[1].client_calls_y1,
+  //     clientCallsY2: behaviorMetrics[1].client_calls_y2,
+  //     propectCallsY1: behaviorMetrics[1].prospect_calls_y1,
+  //     propectCallsY2: behaviorMetrics[1].prospect_calls_y2,
+  //     strategiesY1: behaviorMetrics[1].strat_uploaded_y1,
+  //     strategiesY2: behaviorMetrics[1].strat_uploaded_y2,
+  //   },
 }

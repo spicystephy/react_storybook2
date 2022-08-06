@@ -1,8 +1,8 @@
 import http from './http.service'
 
-class ProfileService {
+class UsersService {
   async get() {
     return await http.get('http://localhost:3004/users/1')
   }
 }
-export default new ProfileService()
+export default new UsersService()
