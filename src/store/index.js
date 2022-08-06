@@ -5,6 +5,8 @@ import profileReducer from './profileSlice'
 import clientReducer from './clientSlice'
 import summary1Reducer from './summary1Slice'
 import summary2Reducer from './summary2Slice'
+import behaviorReducer from './behaviorSlice'
+import outcomeReducer from './outcomeSlice'
 
 const reducers = {
   counter: counterReducer,
@@ -13,6 +15,8 @@ const reducers = {
   client: clientReducer,
   summary1: summary1Reducer,
   summary2: summary2Reducer,
+  behavior: behaviorReducer,
+  outcome: outcomeReducer,
 }
 
 export const store = configureStore({
