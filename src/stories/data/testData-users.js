@@ -7,6 +7,7 @@ export const users = [
     last_name: 'Maides',
     email: 'bmaides0@oracle.com',
     role: 'Commercial RM V',
+    hire_date: '05/15/2015',
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ export const users = [
     last_name: 'Kerss',
     email: 'fkerss1@icio.us',
     role: 'Commercial RM III',
+    hire_date: '01/09/2019',
   },
   {
     id: 3,
@@ -25,6 +27,7 @@ export const users = [
     last_name: 'Phlippsen',
     email: 'lphlippsen2@prweb.com',
     role: 'Commercial RM II',
+    hire_date: '10/07/2017',
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ export const users = [
     last_name: 'Flecknell',
     email: 'fflecknell3@elegantthemes.com',
     role: 'Commercial RM II',
+    hire_date: '08/11/2011',
   },
   {
     id: 5,
@@ -43,6 +47,7 @@ export const users = [
     last_name: 'Woodthorpe',
     email: 'awoodthorpe4@aol.com',
     role: 'Commercial RM IV',
+    hire_date: '08/08/2008',
   },
   {
     id: 6,
@@ -52,6 +57,7 @@ export const users = [
     last_name: 'Rouff',
     email: 'rrouff5@lulu.com',
     role: 'Commercial RM V',
+    hire_date: '01/29/2009',
   },
   {
     id: 7,
@@ -61,6 +67,7 @@ export const users = [
     last_name: 'Forsdicke',
     email: 'nforsdicke6@prnewswire.com',
     role: 'Commercial RM IV',
+    hire_date: '11/15/2015',
   },
   {
     id: 8,
@@ -70,6 +77,7 @@ export const users = [
     last_name: 'Walczak',
     email: 'rwalczak7@mail.ru',
     role: 'Commercial RM III',
+    hire_date: '09/30/2003',
   },
   {
     id: 9,
@@ -79,6 +87,7 @@ export const users = [
     last_name: 'Tadgell',
     email: 'atadgell8@imageshack.us',
     role: 'Commercial RM IV',
+    hire_date: '02/15/2015',
   },
   {
     id: 10,
@@ -88,5 +97,6 @@ export const users = [
     last_name: 'Linford',
     email: 'llinford9@nationalgeographic.com',
     role: 'Commercial RM I',
+    hire_date: '02/01/2001',
   },
 ]
