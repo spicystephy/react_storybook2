@@ -3,13 +3,15 @@ import { NbosClientOverview } from '../../organisms/NbosClientOverview'
 import { NbosSummary1 } from '../../organisms/NbosSummary1'
 import { NbosSummary2 } from '../../organisms/NbosSummary2'
 import { NbosMetrics } from 'components/organisms/NbosMetrics'
-import { useDispatch, useSelector } from 'react-redux'
-import { store } from 'store'
+import { NbosHighchartsColumn } from 'components/molecules/NbosHighchartsColumn'
+import { NbosOpportunitiesTable } from '../../organisms/NbosOpportunitiesTable'
 // import { useDispatch, useSelector } from 'react-redux'
-import { getSummary1 } from 'store/summary1Slice'
-import { getSummary2 } from 'store/summary2Slice'
-import { getUsers } from 'store/usersSlice'
-import { getClientData } from 'store/clientsSlice'
+// import { store } from 'store'
+// import { useDispatch, useSelector } from 'react-redux'
+// import { getSummary1 } from 'store/summary1Slice'
+// import { getSummary2 } from 'store/summary2Slice'
+// import { getUsers } from 'store/usersSlice'
+// import { getClientData } from 'store/clientsSlice'
 
 export const NbosDashboardTemplate = ({
   users,
@@ -32,6 +34,12 @@ export const NbosDashboardTemplate = ({
       </div>
       <div className="tw-col-span-3">
         <NbosMetrics metrics={metrics} />
+      </div>
+      <div className="tw-col-span-3">
+        <NbosHighchartsColumn metrics={metrics} />
+      </div>
+      <div className="tw-col-span-3">
+        <NbosOpportunitiesTable metrics={metrics} />
       </div>
     </div>
   )
