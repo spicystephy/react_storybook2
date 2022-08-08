@@ -1,13 +1,13 @@
 export const outcomeMetrics = [
   {
     user_id: 1,
-    loan_prod_y1: 455167.57,
-    loan_prod_y2: 579098.78,
+    loan_prod_y1: 4551670.57,
+    loan_prod_y2: 5790980.78,
     dep_growth_y1: 348379.44,
     dep_growth_y2: 382682.86,
     tm_growth_y1: 322704.73,
     tm_growth_y2: 400572.22,
-    new_clients_y1: 3,
+    new_clients_y1: 0,
     new_clients_y2: 4,
   },
   {
