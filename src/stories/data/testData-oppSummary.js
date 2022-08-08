@@ -1,4 +1,4 @@
-export const oppurtinitySummary = [
+export const opportunitySummary = [
   {
     year: 2019,
     stage_1: 372050.67,
