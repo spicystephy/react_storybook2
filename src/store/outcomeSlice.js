@@ -17,7 +17,6 @@ const initialState = {
   newClientsY1: 0,
   newClientsY2: 0,
 }
-
 export const outcomeSlice = createSlice({
   name: 'outcomeSlice',
 
@@ -29,16 +28,15 @@ export const outcomeSlice = createSlice({
     [getOutcomeMetrics.fulfilled]: (state, action) => {
       state.loanProdY1 = action.payload.loan_prod_y1
       state.loanProdY2 = action.payload.loan_prod_y2
-      state.DepGrowthY1 = action.payload.dep_growth_y1
-      state.DepGrowthY2 = action.payload.dep_growth_y2
-      state.TmGrowthY1 = action.payload.tm_growth_y1
-      state.TmGrowthY2 = action.payload.tm_growth_y2
+      state.depGrowthY1 = action.payload.dep_growth_y1
+      state.depGrowthY2 = action.payload.dep_growth_y2
+      state.tmGrowthY1 = action.payload.tm_growth_y1
+      state.tmGrowthY2 = action.payload.tm_growth_y2
       state.newClientsY1 = action.payload.new_clients_y1
       state.newClientsY2 = action.payload.new_clients_y2
     },
   },
 })
-
 export const { get } = outcomeSlice.actions
 const { reducer } = outcomeSlice
 export default reducer
