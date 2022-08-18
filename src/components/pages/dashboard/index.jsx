@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+// import React, { useState, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -6,44 +6,46 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
+import { Provider } from 'react-redux'
 import { NbosDashboardTemplate } from '../../features/dashboard/NbosDashboardTemplate'
-import { NbosMetrics } from 'components/organisms/NbosMetrics'
-import { NbosOpportunitiesTable } from 'components/organisms/NbosOpportunitiesTable'
-import { NbosHighchartsColumn } from 'components/molecules/NbosHighchartsColumn'
-import { useDispatch, useSelector } from 'react-redux'
-// import { user } from '../../../stories/data/testData-user'
-// import { client } from '../../../stories/data/testData-client'
-// import { summary1 } from '../../../stories/data/testData-summary1'
-// import { summary2 } from '../../../stories/data/testData-summary2'
-import { store } from 'store'
+// import { NbosClientOverview } from 'components/organisms/NbosClientOverview'
+import { useAppSelector, useAppDispatch } from 'hooks/useReduxHooks'
 import { getClientsData } from 'store/clientsSlice'
 import { getUsers } from 'store/usersSlice'
 import { getSummary1 } from 'store/summary1Slice'
 import { getSummary2 } from 'store/summary2Slice'
-import { getOutcomeMetrics } from 'store/outcomeSlice'
-import { getBehaviorMetrics } from 'store/behaviorSlice'
-import { NbosSummary1 } from 'components/organisms/NbosSummary1'
+import { store } from '../../../store'
+import { useEffect } from 'react'
 
 export function DashboardPage() {
-  const userProfile = useSelector(state => state.userProfile)
-  const clientsData = useSelector(state => state.clientData)
-  const summary1 = useSelector(state => state.summary1)
-  const summary2 = useSelector(state => state.summary2)
-  const outcomeMetrics = useSelector(state => state.outcomeMetrics)
-  const behaviorMetrics = useSelector(state => state.behaviorMetrics)
-  const dispatch = useDispatch()
+  const clientsData = useAppSelector(state => state.clients)
+  const usersData = useAppSelector(state => state.users)
+  const summary1 = useAppSelector(state => state.summary1)
+  const summary2 = useAppSelector(state => state.summary2)
 
-  useEffect(async () => {
-    await dispatch(getUsers())
-    await dispatch(getClientsData())
-    await dispatch(getSummary1())
-    await dispatch(getSummary2())
-    await dispatch(getOutcomeMetrics())
-    await dispatch(getBehaviorMetrics())
-  }, [])
+  // const usersData = useAppSelector(state => {
+  //   return getUsers(state)
+  // })
+  // const summary1 = useAppSelector(state => {
+  //   return getSummary1(state)
+  // })
+  // const summary2 = useAppSelector(state => {
+  //   return getSummary2(state)
+  // })
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    async function fetchData() {
+      await dispatch(getClientsData())
+      await dispatch(getUsers())
+      await dispatch(getSummary1())
+      await dispatch(getSummary2())
+    }
+    fetchData()
+  })
 
   return (
-    <>
+    <Provider store={store}>
       <Box sx={{ flexGrow: 1 }}>
         <AppBar position="static">
           <Toolbar>
@@ -69,18 +71,16 @@ export function DashboardPage() {
             <div className="tw-bg-slate-200 tw-h-screen" />
           </aside>
           <section className="tw-grow">
-            {/* <NbosDashboardTemplate
-              user={user}
-              client={client}
+            <NbosDashboardTemplate
+              client={clientsData}
+              user={usersData}
               summary1={summary1}
               summary2={summary2}
-            /> */}
-            <NbosMetrics />
-            <NbosHighchartsColumn />
-            <NbosOpportunitiesTable />
+            />
+            {/* <NbosClientOverview client={clientsData} /> */}
           </section>
         </div>
       </main>
-    </>
+    </Provider>
   )
 }
