@@ -1,4 +1,4 @@
-// import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -8,30 +8,34 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import { Provider } from 'react-redux'
 import { NbosDashboardTemplate } from '../../features/dashboard/NbosDashboardTemplate'
-// import { NbosClientOverview } from 'components/organisms/NbosClientOverview'
 import { useAppSelector, useAppDispatch } from 'hooks/useReduxHooks'
 import { getClientsData } from 'store/clientsSlice'
 import { getUsers } from 'store/usersSlice'
 import { getSummary1 } from 'store/summary1Slice'
 import { getSummary2 } from 'store/summary2Slice'
+import { getBehaviorMetrics } from 'store/behaviorSlice'
+import { getOutcomeMetrics } from 'store/outcomeSlice'
+import { getOppSummary } from 'store/oppSummarySlice'
+import { getOppDetail } from 'store/oppDetailSlice'
 import { store } from '../../../store'
-import { useEffect } from 'react'
+// import { NbosHighchartsColumn } from 'components/molecules/NbosHighchartsColumn'
+// import { NbosOpportunitiesTable } from 'components/organisms/NbosOpportunitiesTable'
+// import { NbosMetrics } from 'components/organisms/NbosMetrics'
 
 export function DashboardPage() {
   const clientsData = useAppSelector(state => state.clients)
   const usersData = useAppSelector(state => state.users)
   const summary1 = useAppSelector(state => state.summary1)
   const summary2 = useAppSelector(state => state.summary2)
+  const behaviorMetrics = useAppSelector(state => state.behavior)
+  const outcomeMetrics = useAppSelector(state => state.outcome)
+  const oppSummary = useAppSelector(state => state.oppSummary)
+  const oppDetail = useAppSelector(state => state.oppDetail)
+  // console.log(outcomeMetrics)
+  // console.log(oppSummary)
+  // console.log(oppDetail)
+  const chartData = { behaviorMetrics, outcomeMetrics }
 
-  // const usersData = useAppSelector(state => {
-  //   return getUsers(state)
-  // })
-  // const summary1 = useAppSelector(state => {
-  //   return getSummary1(state)
-  // })
-  // const summary2 = useAppSelector(state => {
-  //   return getSummary2(state)
-  // })
   const dispatch = useAppDispatch()
 
   useEffect(() => {
@@ -40,9 +44,13 @@ export function DashboardPage() {
       await dispatch(getUsers())
       await dispatch(getSummary1())
       await dispatch(getSummary2())
+      await dispatch(getBehaviorMetrics())
+      await dispatch(getOutcomeMetrics())
+      await dispatch(getOppSummary())
+      await dispatch(getOppDetail())
     }
     fetchData()
-  })
+  }, [])
 
   return (
     <Provider store={store}>
@@ -73,14 +81,20 @@ export function DashboardPage() {
           <section className="tw-grow">
             <NbosDashboardTemplate
               client={clientsData}
-              user={usersData}
+              users={usersData}
               summary1={summary1}
               summary2={summary2}
+              chartData={chartData}
+              // oppSummary={oppSummary}
+              opportunitiesDetail={oppDetail}
             />
-            {/* <NbosClientOverview client={clientsData} /> */}
+            {/* <NbosMetrics chartData={chartData} users={usersData} /> */}
+            {/* <NbosHighchartsColumn oppSummary={oppSummary} />
+            <NbosOpportunitiesTable opportunitiesDetail={oppDetail} /> */}
           </section>
         </div>
       </main>
     </Provider>
   )
 }
+//  set table to overflow=none so the list will not stretch the entire page - maybe objectFill

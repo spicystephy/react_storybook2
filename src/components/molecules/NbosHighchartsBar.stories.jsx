@@ -1,7 +1,7 @@
 import { NbosHighchartsBar } from './NbosHighchartsBar'
-// import { users } from 'stories/data/testData-users'
-// import { outcomeMetrics } from 'stories/data/testData-outcomeMetrics'
-// import { behaviorMetrics } from 'stories/data/testData-behaviorMetrics'
+import { users } from 'stories/data/testData-users'
+import { outcomeMetrics } from 'stories/data/testData-outcomeMetrics'
+import { behaviorMetrics } from 'stories/data/testData-behaviorMetrics'
 
 export default {
   title: 'Molecules/NbosHighchartsBar',
@@ -16,21 +16,23 @@ Outcome.args = { chartName: 'outcome' }
 export const Behavior = Template.bind({})
 Behavior.args = { chartName: 'behavior' }
 
+// export const Outcome = Template.bind({})
 // Outcome.args = {
-// chartName: 'outcome',
-// users: {
-//   userName: `${users[1].first_name} ${users[1].last_name}`,
-// },
-// outcomeMetrics: {
-//   loanProdY1: outcomeMetrics[1].loan_prod_y1,
-//   loanProdY2: outcomeMetrics[1].loan_prod_y2,
-//   depGrowthY1: outcomeMetrics[1].dep_growth_y1,
-//   depGrowthY2: outcomeMetrics[1].dep_growth_y2,
-//   tmGrowthY1: outcomeMetrics[1].tm_growth_y1,
-//   tmGrowthY2: outcomeMetrics[1].tm_growth_y2,
-//   newClientsY1: outcomeMetrics[1].new_clients_y1,
-//   newClientsY2: outcomeMetrics[1].new_clients_y2,
-// },
+//   chartName: 'outcome',
+//   users: {
+//     userName: `${users[1].first_name} ${users[1].last_name}`,
+//   },
+//   outcomeMetrics: {
+//     loanProdY1: outcomeMetrics[1].loan_prod_y1,
+//     loanProdY2: outcomeMetrics[1].loan_prod_y2,
+//     depGrowthY1: outcomeMetrics[1].dep_growth_y1,
+//     depGrowthY2: outcomeMetrics[1].dep_growth_y2,
+//     tmGrowthY1: outcomeMetrics[1].tm_growth_y1,
+//     tmGrowthY2: outcomeMetrics[1].tm_growth_y2,
+//     newClientsY1: outcomeMetrics[1].new_clients_y1,
+//     newClientsY2: outcomeMetrics[1].new_clients_y2,
+//   },
+// }
 // behaviorMetrics: {
 //   satisfactionY1: behaviorMetrics[1].avg_overall_rm_sat_y1,
 //   satisfactionY2: behaviorMetrics[1].avg_overall_rm_sat_y2,

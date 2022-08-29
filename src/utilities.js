@@ -1,15 +1,5 @@
 import { format } from 'date-fns'
 
-export const currencyFormatter = data => {
-  if (data > 1000 && data < 1000000) {
-    return `$${data}  K`
-  } else if (data >= 1000000) {
-    return `$${data}  MM`
-  } else if (data < 1000) {
-    return `$${data}`
-  }
-}
-
 export const dataFormatter = data => {
   if (data > 1000 && data < 1000000) {
     const value = data / 1000
@@ -42,4 +32,16 @@ export const percentFormatter = data => {
 export const dateFormatter = date => {
   const newDate = format(new Date(date.value), 'yyyy/MM/dd')
   return newDate
+}
+
+export const currencyFormatter = data => {
+  if (data.value > 1000 && data.value < 1000000) {
+    const value = data.value / 100000
+    return `$${value.toFixed(2)}  K`
+  } else if (data.value >= 1000000) {
+    const value = data.value / 1000000
+    return `$${value.toFixed(2)}  MM`
+  } else if (data.value < 1000) {
+    return `$${data.value}`
+  }
 }

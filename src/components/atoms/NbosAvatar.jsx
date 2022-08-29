@@ -1,4 +1,4 @@
-import { PropTypes } from 'prop-types'
+// import { propTypes } from 'prop-types'
 import Avatar from '@mui/material/Avatar'
 
 export const NbosAvatar = ({ avatar, alt, src, width, height }) => {
@@ -9,15 +9,15 @@ export const NbosAvatar = ({ avatar, alt, src, width, height }) => {
   )
 }
 
-NbosAvatar.PropTypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  alt: PropTypes.string,
-  src: PropTypes.node,
-}
+// NbosAvatar.propTypes = {
+//   width: propTypes.number,
+//   height: propTypes.number,
+//   alt: propTypes.string,
+//   src: propTypes.node,
+// }
 
-NbosAvatar.defaultProps = {
-  width: 50,
-  height: 50,
-  alt: 'User',
-}
+// NbosAvatar.defaultProps = {
+//   width: 50,
+//   height: 50,
+//   alt: 'User',
+// }

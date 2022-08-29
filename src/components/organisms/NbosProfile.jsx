@@ -1,4 +1,4 @@
-import { PropTypes } from 'prop-types'
+// import PropTypes from 'prop-types'
 import { NbosAvatar } from '../atoms/NbosAvatar'
 import { NbosText } from '../atoms/NbosText'
 import { NbosPage } from '../molecules/NbosPage'
@@ -31,6 +31,6 @@ export const NbosProfile = ({ users, avatar }) => {
   )
 }
 
-NbosProfile.propTypes = { users: PropTypes.object }
+// NbosProfile.propTypes = { users: PropTypes.object }
 
-NbosProfile.defaultProps = {}
+// NbosProfile.defaultProps = {}

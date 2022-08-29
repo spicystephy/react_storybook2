@@ -1,11 +1,11 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import ToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 
-export default function NbosMetricToggleSwitch({ changeHandler }) {
-  const [toggle, setToggle] = React.useState('outcome')
+export const NbosMetricToggleSwitch = ({ changeHandler, chartName }) => {
+  const [toggle, setToggle] = useState('outcome')
 
-  const handleChange = (event, newValue) => {
+  const handleChange = newValue => {
     // changes the toggle btn
     setToggle(newValue)
     // displays selected chart data
@@ -15,9 +15,9 @@ export default function NbosMetricToggleSwitch({ changeHandler }) {
   return (
     <ToggleButtonGroup
       color="primary"
-      value={toggle}
+      value={chartName}
       exclusive
-      onChange={handleChange}
+      onChange={changeHandler}
       size="small"
     >
       <ToggleButton value="outcome">Outcome Metrics</ToggleButton>
@@ -25,3 +25,27 @@ export default function NbosMetricToggleSwitch({ changeHandler }) {
     </ToggleButtonGroup>
   )
 }
+
+// export const NbosMetricToggleSwitch = ({ changeHandler }) => {
+//   const [toggle, setToggle] = React.useState('outcome')
+
+//   const handleChange = (event, newValue) => {
+//     // changes the toggle btn
+//     setToggle(newValue)
+//     // displays selected chart data
+//     changeHandler(newValue)
+//   }
+
+//   return (
+//     <ToggleButtonGroup
+//       color="primary"
+//       value={toggle}
+//       exclusive
+//       onChange={handleChange}
+//       size="small"
+//     >
+//       <ToggleButton value="outcome">Outcome Metrics</ToggleButton>
+//       <ToggleButton value="behavior">Behavior Metrics</ToggleButton>
+//     </ToggleButtonGroup>
+//   )
+// }

@@ -1,13 +1,11 @@
-// import React, { useState, useEffect } from 'react'
-import { PropTypes } from 'prop-types'
+// import React,{ useState, useEffect } from 'react'
+// import { PropTypes } from 'prop-types'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-import { outcomeMetrics } from 'stories/data/testData-outcomeMetrics'
-import { behaviorMetrics } from 'stories/data/testData-behaviorMetrics'
-import { users } from 'stories/data/testData-users'
-import { dataAndCurrencyFormatter, dataFormatter } from 'utilities'
+import { NbosPage } from './NbosPage'
+// import { dataAndCurrencyFormatter, dataFormatter } from 'utilities'
 
-export const NbosHighchartsBar = ({ chartName }) => {
+export const NbosHighchartsBar = ({ chartName, chartData, users }) => {
   const options = {
     chart: {
       type: 'bar',
@@ -25,7 +23,7 @@ export const NbosHighchartsBar = ({ chartName }) => {
       x: 15,
     },
     title: {
-      text: `${users[0].first_name} ${users[0].last_name} vs. This Time Last Year`,
+      text: `${users.userName} vs. This Time Last Year`,
       align: 'left',
       x: 15,
     },
@@ -100,7 +98,6 @@ export const NbosHighchartsBar = ({ chartName }) => {
       valueDecimals: 0,
       valuePrefix: chartName === 'outcome' ? '$' : null,
     },
-
     series:
       chartName === 'outcome'
         ? [
@@ -109,13 +106,15 @@ export const NbosHighchartsBar = ({ chartName }) => {
               color: '#0066ff',
               minPointLength: 100,
               data: [
-                outcomeMetrics[0].loan_prod_y1,
-                outcomeMetrics[0].dep_growth_y1,
-                outcomeMetrics[0].tm_growth_y1,
+                chartData.outcomeMetrics.loanProdY1,
+                chartData.outcomeMetrics.depGrowthY1,
+                chartData.outcomeMetrics.tmGrowthY1,
                 {
-                  y: outcomeMetrics[0].new_clients_y1,
+                  y: chartData.outcomeMetrics.newClientsY1,
                   color: `${
-                    outcomeMetrics[0].new_clients_y1 > 2 ? '#0066ff' : 'red'
+                    chartData.outcomeMetrics.newClientsY1 > 2
+                      ? '#0066ff'
+                      : 'red'
                   }`,
                 },
               ],
@@ -125,10 +124,10 @@ export const NbosHighchartsBar = ({ chartName }) => {
               color: '#d9d9d9',
               minPointLength: 1000,
               data: [
-                outcomeMetrics[0].loan_prod_y2,
-                outcomeMetrics[0].dep_growth_y2,
-                outcomeMetrics[0].tm_growth_y2,
-                outcomeMetrics[0].new_clients_y2,
+                chartData.outcomeMetrics.loanProdY2,
+                chartData.outcomeMetrics.depGrowthY2,
+                chartData.outcomeMetrics.tmGrowthY2,
+                chartData.outcomeMetrics.newClientsY2,
               ],
             },
           ]
@@ -138,10 +137,10 @@ export const NbosHighchartsBar = ({ chartName }) => {
               color: '#0066ff',
               minPointLength: 100,
               data: [
-                behaviorMetrics[0].avg_overall_rm_sat_y1,
-                behaviorMetrics[0].client_calls_y1,
-                behaviorMetrics[0].prospect_calls_y1,
-                behaviorMetrics[0].strat_uploaded_y1,
+                chartData.behaviorMetrics.satisfactionY1,
+                chartData.behaviorMetrics.clientCallsY1,
+                chartData.behaviorMetrics.prospectCallsY1,
+                chartData.behaviorMetrics.strategiesY1,
               ],
             },
             {
@@ -149,39 +148,40 @@ export const NbosHighchartsBar = ({ chartName }) => {
               color: '#d9d9d9',
               minPointLength: 1000,
               data: [
-                behaviorMetrics[0].avg_overall_rm_sat_y2,
-                behaviorMetrics[0].client_calls_y2,
-                behaviorMetrics[0].prospect_calls_y2,
-                behaviorMetrics[0].strat_uploaded_y2,
+                chartData.behaviorMetrics.satisfactionY2,
+                chartData.behaviorMetrics.clientCallsY2,
+                chartData.behaviorMetrics.prospectCallsY2,
+                chartData.behaviorMetrics.strategiesY2,
               ],
             },
           ],
   }
 
+  // const [metricsData, setMetricsData] = useState(options)
   return (
-    <HighchartsReact
-      highcharts={Highcharts}
-      chartName={chartName}
-      options={options}
-    />
+    <NbosPage elevation={2}>
+      <HighchartsReact
+        highcharts={Highcharts}
+        chartName={chartName}
+        options={options}
+      />
+    </NbosPage>
   )
 }
-NbosHighchartsBar.prototypes = {
-  chartName: PropTypes.oneOf(['outcome', 'behavior']),
-}
-NbosHighchartsBar.defaultProps = {
-  chartName: 'outcome',
-}
+// NbosHighchartsBar.prototypes = {
+//   chartName: PropTypes.oneOf(['outcome', 'behavior']),
+// }
+// NbosHighchartsBar.defaultProps = {
+//   chartName: 'outcome',
+// }
 
 // const onSeriesChange = data => {
 //   setChartData(prevState => {
-// const sd = { ...prevState }
-// const newCategories = xAxis.categories
-// const newData = series.data
-// sd.xAxis.categories = newCategories
-// sd.series = newData
-// return sd
-// })
+//     const sd = { ...prevState }
+//     const newCategories = xAxis.categories
+//     const newData = series.data
+//     sd.xAxis.categories = newCategories
+//     sd.series = newData
+//     return sd
+//   })
 // }
-// })
-// const [chartData, setChartData] = useState(options)

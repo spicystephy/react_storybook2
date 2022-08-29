@@ -1,8 +1,12 @@
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-import { opportunitySummary } from 'stories/data/testData-oppSummary'
+// import { opportunitySummary } from 'stories/data/testData-oppSummary'
+import { NbosPage } from './NbosPage'
 
-export const NbosHighchartsColumn = () => {
+export const NbosHighchartsColumn = ({ oppSummary }) => {
+  console.log(oppSummary)
+  // const { y2020, y2021 } = oppSummary
+
   const options = {
     chart: {
       type: 'column',
@@ -44,29 +48,37 @@ export const NbosHighchartsColumn = () => {
     },
     series: [
       {
-        name: opportunitySummary[2].year,
+        name: oppSummary.y2020.year,
         color: '#0066ff',
         data: [
-          opportunitySummary[2].stage_1,
-          opportunitySummary[2].stage_2,
-          opportunitySummary[2].stage_3,
-          opportunitySummary[2].stage_4,
-          opportunitySummary[2].booked_ytd,
+          oppSummary.y2020.stage_1,
+          oppSummary.y2020.stage_2,
+          oppSummary.y2020.stage_3,
+          oppSummary.y2020.stage_4,
+          oppSummary.y2020.booked_ytd,
         ],
       },
       {
-        name: opportunitySummary[1].year,
+        name: oppSummary.y2021.year,
         color: '#a2c4f7',
         data: [
-          opportunitySummary[1].stage_1,
-          opportunitySummary[1].stage_2,
-          opportunitySummary[1].stage_3,
-          opportunitySummary[1].stage_4,
-          opportunitySummary[1].booked_ytd,
+          oppSummary.y2021.stage_1,
+          oppSummary.y2021.stag_e2,
+          oppSummary.y2021.stage_3,
+          oppSummary.y2021.stage_4,
+          oppSummary.y2021.booked_ytd,
         ],
       },
     ],
   }
 
-  return <HighchartsReact highcharts={Highcharts} options={options} />
+  return (
+    <NbosPage elevation={2}>
+      <HighchartsReact
+        highcharts={Highcharts}
+        options={options}
+        // oppSummary={oppSummary}
+      />
+    </NbosPage>
+  )
 }

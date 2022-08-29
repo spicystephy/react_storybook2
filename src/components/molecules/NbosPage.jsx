@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import Paper from '@mui/material/Paper'
 
 export const NbosPage = ({ children, elevation, bgColor }) => {
@@ -13,14 +13,14 @@ export const NbosPage = ({ children, elevation, bgColor }) => {
   )
 }
 
-NbosPage.propTypes = {
-  elevation: PropTypes.number,
-  bgColor: PropTypes.string,
-  rounded: PropTypes.bool,
-}
-NbosPage.propTypes = {
-  elevation: 3,
-  bgColor: '#ff0000',
-  rounded: true,
-  children: 'Not provided',
-}
+// NbosPage.propTypes = {
+//   elevation: PropTypes.number,
+//   bgColor: PropTypes.string,
+//   rounded: PropTypes.bool,
+// }
+// NbosPage.propTypes = {
+//   elevation: 3,
+//   bgColor: '#ff0000',
+//   rounded: true,
+//   children: 'Not provided',
+// }

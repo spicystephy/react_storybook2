@@ -4,6 +4,7 @@ import { NbosText } from '../atoms/NbosText'
 import { dataAndCurrencyFormatter } from 'utilities'
 
 export const NbosSummary1 = ({ summary1 }) => {
+  // console.log(summary1)
   return (
     <NbosPage>
       <div className="tw-grid tw-grid-cols-3 tw-text-left tw-py-3 tw-divide-x-2">
