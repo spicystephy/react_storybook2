@@ -1,11 +1,13 @@
 import OutcomeMetricsService from 'services/outcomeMetrics.service'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-// api call to get data for one client
-export const getOutcomeMetrics = createAsyncThunk('outcome/get', async () => {
-  const res = await OutcomeMetricsService.get()
-  return res.data
-})
+export const getOutcomeMetrics = createAsyncThunk(
+  'outcome_metrics/get',
+  async () => {
+    const res = await OutcomeMetricsService.get()
+    return res.data
+  },
+)
 
 const initialState = {
   loanProdY1: 0,

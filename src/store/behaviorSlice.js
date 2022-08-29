@@ -1,11 +1,14 @@
-import BehaviorMetricsService from 'services/outcomeMetrics.service'
+import BehaviorMetricsService from 'services/behaviorMetrics.service'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
 // api call to get data for one client
-export const getBehaviorMetrics = createAsyncThunk('behavior/get', async () => {
-  const res = await BehaviorMetricsService.get()
-  return res.data
-})
+export const getBehaviorMetrics = createAsyncThunk(
+  'behavior_metrics/get',
+  async () => {
+    const res = await BehaviorMetricsService.get()
+    return res.data
+  },
+)
 
 const initialState = {
   satisfactionY1: 0,
@@ -17,7 +20,6 @@ const initialState = {
   strategiesY1: 0,
   strategiesY2: 0,
 }
-
 export const behaviorSlice = createSlice({
   name: 'behaviorSlice',
 
@@ -35,6 +37,8 @@ export const behaviorSlice = createSlice({
       state.prospectCallsY2 = action.payload.prospect_calls_y2
       state.strategiesY1 = action.payload.strat_uploaded_y1
       state.strategiesY2 = action.payload.strat_uploaded_y2
+      // console.log(state)
+      // console.log(action.payload)
     },
   },
 })

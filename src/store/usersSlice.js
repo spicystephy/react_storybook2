@@ -29,7 +29,7 @@ export const usersSlice = createSlice({
     },
   },
 })
-
 export const { get } = usersSlice.actions
 const { reducer } = usersSlice
+
 export default reducer

@@ -1,7 +1,6 @@
 import ClientsService from 'services/client.service'
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-// api call to get data for one client
 export const getClientsData = createAsyncThunk('clients/get', async () => {
   const res = await ClientsService.get()
   return res.data
