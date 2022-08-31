@@ -18,9 +18,6 @@ import { getOutcomeMetrics } from 'store/outcomeSlice'
 import { getOppSummary } from 'store/oppSummarySlice'
 import { getOppDetail } from 'store/oppDetailSlice'
 import { store } from '../../../store'
-// import { NbosHighchartsColumn } from 'components/molecules/NbosHighchartsColumn'
-// import { NbosOpportunitiesTable } from 'components/organisms/NbosOpportunitiesTable'
-// import { NbosMetrics } from 'components/organisms/NbosMetrics'
 
 export function DashboardPage() {
   const clientsData = useAppSelector(state => state.clients)
@@ -31,9 +28,7 @@ export function DashboardPage() {
   const outcomeMetrics = useAppSelector(state => state.outcome)
   const oppSummary = useAppSelector(state => state.oppSummary)
   const oppDetail = useAppSelector(state => state.oppDetail)
-  // console.log(outcomeMetrics)
-  // console.log(oppSummary)
-  // console.log(oppDetail)
+
   const chartData = { behaviorMetrics, outcomeMetrics }
 
   const dispatch = useAppDispatch()
@@ -85,12 +80,9 @@ export function DashboardPage() {
               summary1={summary1}
               summary2={summary2}
               chartData={chartData}
-              // oppSummary={oppSummary}
+              oppSummary={oppSummary}
               opportunitiesDetail={oppDetail}
             />
-            {/* <NbosMetrics chartData={chartData} users={usersData} /> */}
-            {/* <NbosHighchartsColumn oppSummary={oppSummary} />
-            <NbosOpportunitiesTable opportunitiesDetail={oppDetail} /> */}
           </section>
         </div>
       </main>

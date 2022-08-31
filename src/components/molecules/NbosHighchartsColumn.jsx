@@ -4,19 +4,16 @@ import HighchartsReact from 'highcharts-react-official'
 import { NbosPage } from './NbosPage'
 
 export const NbosHighchartsColumn = ({ oppSummary }) => {
-  console.log(oppSummary)
-  // const { y2020, y2021 } = oppSummary
-
   const options = {
     chart: {
       type: 'column',
-      spacingBottom: null,
-      spacingTop: null,
+      // spacingBottom: null,
+      // spacingTop: null,
       spacingLeft: 1,
       spacingRight: 1,
       marginLeft: 200,
       marginRight: 200,
-      width: null,
+      // width: null,
       height: 300,
     },
     title: {
@@ -63,7 +60,7 @@ export const NbosHighchartsColumn = ({ oppSummary }) => {
         color: '#a2c4f7',
         data: [
           oppSummary.y2021.stage_1,
-          oppSummary.y2021.stag_e2,
+          oppSummary.y2021.stage_2,
           oppSummary.y2021.stage_3,
           oppSummary.y2021.stage_4,
           oppSummary.y2021.booked_ytd,
@@ -71,7 +68,6 @@ export const NbosHighchartsColumn = ({ oppSummary }) => {
       },
     ],
   }
-
   return (
     <NbosPage elevation={2}>
       <HighchartsReact

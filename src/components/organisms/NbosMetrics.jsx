@@ -4,13 +4,7 @@ import { NbosMetricToggleSwitch } from 'components/molecules/NbosMetricToggleSwi
 import { NbosPage } from 'components/molecules/NbosPage'
 
 export const NbosMetrics = ({ chartData, users }) => {
-  // const [outcomeChart, setOutcomeChart] = useState('outcome')
-  // const [behaviorChart, setBehaviorChart] = useState('behavior')
   const [chartName, setChartName] = useState('outcome')
-
-  // const onChange = name => {
-  //   setChartName(name)
-  // }
 
   const onChange = (event, name) => {
     setChartName(name)

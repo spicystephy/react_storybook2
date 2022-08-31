@@ -7,7 +7,8 @@
       "first_name": "Bone",
       "last_name": "Maides",
       "email": "bmaides0@oracle.com",
-      "role": "Commercial RM V"
+      "role": "Commercial RM V",
+      "hire_date": "10/01/2019"
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "first_name": "Freeland",
       "last_name": "Kerss",
       "email": "fkerss1@icio.us",
-      "role": "Commercial RM III"
+      "role": "Commercial RM III",
+      "hire_date": "2019-08-16T00:03:46Z"
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "first_name": "Lilith",
       "last_name": "Phlippsen",
       "email": "lphlippsen2@prweb.com",
-      "role": "Commercial RM II"
+      "role": "Commercial RM II",
+      "hire_date": "2019-08-16T00:03:46Z"
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "first_name": "Ferrel",
       "last_name": "Flecknell",
       "email": "fflecknell3@elegantthemes.com",
-      "role": "Commercial RM II"
+      "role": "Commercial RM II",
+      "hire_date": "2019-08-16T00:03:46Z"
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "first_name": "Anabelle",
       "last_name": "Woodthorpe",
       "email": "awoodthorpe4@aol.com",
-      "role": "Commercial RM IV"
+      "role": "Commercial RM IV",
+      "hire_date": "2019-08-16T00:03:46Z"
     },
     {
       "id": 6,
@@ -306,7 +311,7 @@
       "dep_growth_y2": 382682.86,
       "tm_growth_y1": 322704.73,
       "tm_growth_y2": 400572.22,
-      "new_clients_y1": 3,
+      "new_clients_y1": 0,
       "new_clients_y2": 4
     },
     {
@@ -412,14 +417,14 @@
   "behavior_metrics": [
     {
       "id": 1,
-      "avg_overall_rm_sat_y1": 305781.2,
-      "avg_overall_rm_sat_y2": 424953.05,
-      "client_calls_y1": 3,
-      "client_calls_y2": 2,
-      "prospect_calls_y1": 11,
-      "prospect_calls_y2": 16,
-      "strat_uploaded_y1": 11,
-      "strat_uploaded_y2": 18
+      "avg_overall_rm_sat_y1": 4,
+      "avg_overall_rm_sat_y2": 5,
+      "client_calls_y1": 54,
+      "client_calls_y2": 84,
+      "prospect_calls_y1": 2,
+      "prospect_calls_y2": 11,
+      "strat_uploaded_y1": 6,
+      "strat_uploaded_y2": 4
     },
     {
       "id": 2,

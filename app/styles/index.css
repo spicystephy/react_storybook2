@@ -582,6 +582,22 @@ code {
   grid-column: span 3 / span 3;
 }
 
+.tw-col-span-12 {
+  grid-column: span 12 / span 12;
+}
+
+.tw-col-span-6 {
+  grid-column: span 6 / span 6;
+}
+
+.tw-col-span-9 {
+  grid-column: span 9 / span 9;
+}
+
+.tw-col-span-11 {
+  grid-column: span 11 / span 11;
+}
+
 .tw-mt-8 {
   margin-top: 2rem;
 }
@@ -592,6 +608,10 @@ code {
 
 .tw-ml-4 {
   margin-left: 1rem;
+}
+
+.tw-mb-8 {
+  margin-bottom: 2rem;
 }
 
 .tw-flex {
