@@ -1,10 +1,12 @@
 import { useState, useRef, useEffect, useMemo, useCallback } from 'react'
 import { render } from 'react-dom'
+import Button from '@mui/material/Button'
+import ButtonGroup from '@mui/material/ButtonGroup'
 import { AgGridReact } from 'ag-grid-react'
 import 'ag-grid-community/styles/ag-grid.css'
 import 'ag-grid-community/styles/ag-theme-material.css' // Optional theme CSS
 import { NbosPage } from 'components/molecules/NbosPage'
-import { NbosButton } from 'components/atoms/NbosButton'
+// import { NbosButton } from 'components/atoms/NbosButton'
 import { currencyFormatter, dateFormatter } from 'utilities'
 
 export const NbosOpportunitiesTable = ({ opportunitiesDetail }) => {
@@ -40,6 +42,8 @@ export const NbosOpportunitiesTable = ({ opportunitiesDetail }) => {
 
   const defaultColDef = useMemo(() => ({
     sortable: true,
+    flex: 1,
+    resizable: true,
   }))
   useEffect(() => {
     const top5 = [...opportunitiesDetail.oppDetail]
@@ -56,13 +60,28 @@ export const NbosOpportunitiesTable = ({ opportunitiesDetail }) => {
   return (
     <NbosPage elevation={2}>
       <div>
-        <NbosButton
+        <ButtonGroup variant="outlined" aria-label="outlined  button group">
+          <Button label="Top 5 Opportunities" onClick={resetTop5}>
+            Top 5 Opportunities
+          </Button>
+          <Button label="View Full Pipeline" onClick={viewFullPipeline}>
+            View Full Pipeline
+          </Button>
+        </ButtonGroup>
+        {/* <NbosButton
           size="medium"
           label="Top 5 Opportunities"
           onClick={resetTop5}
         >
           {}
         </NbosButton>
+        <NbosButton
+          size="medium"
+          label="View Full Pipeline"
+          onClick={viewFullPipeline}
+        >
+          {}
+        </NbosButton> */}
         <div className="ag-theme-material" style={{ width: '100%' }}>
           <AgGridReact
             ref={gridRef}
@@ -73,13 +92,6 @@ export const NbosOpportunitiesTable = ({ opportunitiesDetail }) => {
             rowSelection="multiple"
           />
         </div>
-        <NbosButton
-          size="medium"
-          label="View Full Pipeline"
-          onClick={viewFullPipeline}
-        >
-          {}
-        </NbosButton>
       </div>
     </NbosPage>
   )

@@ -25,7 +25,7 @@ export const NbosDashboardTemplate = ({
         <NbosSummary1 summary1={summary1} />
         <NbosSummary2 summary2={summary2} />
       </div>
-      <div className="tw-grid tw-col-span-12 tw-gap-8">
+      <div className="tw-grid tw-col-span-12 tw-gap-4">
         <NbosMetrics chartData={chartData} users={users} />
         <NbosHighchartsColumn oppSummary={oppSummary} />
         <NbosOpportunitiesTable opportunitiesDetail={opportunitiesDetail} />

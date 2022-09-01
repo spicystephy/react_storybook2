@@ -2,18 +2,16 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 // import { opportunitySummary } from 'stories/data/testData-oppSummary'
 import { NbosPage } from './NbosPage'
+import { NbosHeading } from 'components/atoms/NbosHeading'
 
 export const NbosHighchartsColumn = ({ oppSummary }) => {
   const options = {
     chart: {
       type: 'column',
-      // spacingBottom: null,
-      // spacingTop: null,
       spacingLeft: 1,
       spacingRight: 1,
       marginLeft: 200,
       marginRight: 200,
-      // width: null,
       height: 300,
     },
     title: {
@@ -69,12 +67,19 @@ export const NbosHighchartsColumn = ({ oppSummary }) => {
     ],
   }
   return (
-    <NbosPage elevation={2}>
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={options}
-        // oppSummary={oppSummary}
-      />
-    </NbosPage>
+    <div>
+      <NbosPage elevation={2}>
+        <div className="tw-p-2 tw-border-b-2">
+          <NbosHeading variant="h5">Pipeline</NbosHeading>
+        </div>
+        <div>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={options}
+            // oppSummary={oppSummary}
+          />
+        </div>
+      </NbosPage>
+    </div>
   )
 }

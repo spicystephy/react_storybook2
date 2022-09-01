@@ -1,7 +1,7 @@
 // import PropTypes from 'prop-types'
 import Paper from '@mui/material/Paper'
 
-export const NbosPage = ({ children, elevation, bgColor }) => {
+export const NbosPage = ({ children, elevation, bgColor, rounded }) => {
   return (
     <Paper
       elevation={elevation}
