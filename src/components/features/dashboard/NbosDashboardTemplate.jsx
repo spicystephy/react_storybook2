@@ -16,8 +16,10 @@ export const NbosDashboardTemplate = ({
   opportunitiesDetail,
 }) => {
   return (
-    <div className="tw-grid tw-grid-cols-3 tw-gap-6 tw-display-inline-block tw-mb-8">
-      <div className="tw-col-span-1">
+    // <div className="tw-grid tw-grid-cols-3 tw-gap-6 tw-display-inline-block tw-mb-8">
+    <div className="tw-grid tw-grid-cols-3 tw-gap-6 tw-mb-8">
+      {/* <div className="tw-sm:flex"> */}
+      <div className="tw-col-span-1 ">
         <NbosProfile users={users} />
       </div>
       <div className="tw-grid tw-col-span-11 tw-gap-8">
@@ -30,6 +32,7 @@ export const NbosDashboardTemplate = ({
         <NbosHighchartsColumn oppSummary={oppSummary} />
         <NbosOpportunitiesTable opportunitiesDetail={opportunitiesDetail} />
       </div>
+      {/* </div> */}
     </div>
   )
 }

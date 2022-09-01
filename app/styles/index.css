@@ -708,12 +708,24 @@ code {
   border-left-width: calc(2px * calc(1 - var(--tw-divide-x-reverse)));
 }
 
+.tw-overflow-hidden {
+  overflow: hidden;
+}
+
 .tw-border-b-4 {
   border-bottom-width: 4px;
 }
 
 .tw-border-b-2 {
   border-bottom-width: 2px;
+}
+
+.tw-border-r-2 {
+  border-right-width: 2px;
+}
+
+.tw-border-l-2 {
+  border-left-width: 2px;
 }
 
 .tw-bg-slate-200 {
@@ -731,6 +743,10 @@ code {
 
 .tw-p-3 {
   padding: 0.75rem;
+}
+
+.tw-p-4 {
+  padding: 1rem;
 }
 
 .tw-py-6 {

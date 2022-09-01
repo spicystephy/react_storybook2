@@ -103,7 +103,11 @@ export const NbosHighchartsBar = ({ chartName, chartData, users }) => {
                 chartData.outcomeMetrics.tmGrowthY1,
                 {
                   y: chartData.outcomeMetrics.newClientsY1,
-                  color: '#ff0000', // red
+                  color: `${
+                    chartData.outcomeMetrics.newClientsY1 > 2
+                      ? '#0066ff' // blue
+                      : '#ff0000' // red
+                  }`,
                 },
               ],
             },
@@ -129,7 +133,11 @@ export const NbosHighchartsBar = ({ chartName, chartData, users }) => {
                 chartData.behaviorMetrics.clientCallsY1,
                 {
                   y: chartData.behaviorMetrics.prospectCallsY1,
-                  color: '#ff0000', // red
+                  color: `${
+                    chartData.behaviorMetrics.prospectCallsY1 > 5
+                      ? '#0066ff' // blue
+                      : '#ff0000' // red
+                  }`,
                 },
                 chartData.behaviorMetrics.strategiesY1,
               ],

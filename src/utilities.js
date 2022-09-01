@@ -18,7 +18,7 @@ export const dataAndCurrencyFormatter = data => {
     return `$${value.toFixed(2)}  K`
   } else if (data >= 1000000) {
     const value = data / 1000000
-    return `$${value}  M`
+    return `$${value.toFixed(2)}  M`
   } else if (data < 1000) {
     return `$${data}`
   }

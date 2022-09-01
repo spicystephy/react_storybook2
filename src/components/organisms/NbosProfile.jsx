@@ -11,20 +11,20 @@ export const NbosProfile = ({ users, avatar }) => {
           <NbosAvatar avatar={avatar} />
         </div>
         <div className="tw-py-5 tw-flex tw-flex-col tw-text-center">
-          <NbosText text="Name" size="xs" color="#808080" />
+          <NbosText text="Name" size="sm" color="#71797E" />
           <NbosText size="xl" text={users.userName} />
         </div>
         <div className="tw-py-5 tw-flex tw-flex-col tw-text-center">
-          <NbosText text="Hire Date" size="xs" color="#808080" />
-          <NbosText text={users.hireDate} />
+          <NbosText text="Hire Date" size="sm" color="#71797E" />
+          <NbosText size="lg" text={users.hireDate} />
         </div>
         <div className="tw-py-4 tw-flex tw-flex-col tw-text-center">
-          <NbosText text="Role" size="xs" color="#808080" />
+          <NbosText text="Role" size="sm" color="#71797E" />
           <NbosText size="lg" text={users.role} />
         </div>
         <div className="tw-py-5 tw-flex tw-flex-col tw-text-center">
-          <NbosText text="Team Lead" size="xs" color="#808080" />
-          <NbosText text={users.teamLead} />
+          <NbosText text="Team Lead" size="sm" color="#71797E" />
+          <NbosText size="lg" text={users.teamLead} />
         </div>
       </div>
     </NbosPage>

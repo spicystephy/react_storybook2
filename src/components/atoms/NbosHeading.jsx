@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 import Typography from '@mui/material/Typography'
 
 export const NbosHeading = ({ children, variant }) => {
@@ -9,9 +9,9 @@ export const NbosHeading = ({ children, variant }) => {
   )
 }
 
-NbosHeading.PropTypes = {
-  variant: PropTypes.string,
-  children: PropTypes.string,
+NbosHeading.propTypes = {
+  variant: propTypes.string,
+  children: propTypes.string,
 }
 
 NbosHeading.defaultProps = {
